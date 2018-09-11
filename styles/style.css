@@ -1,69 +1,128 @@
 /*Without changing anything in the html, add the following styles using advanced selectors*/
 
-
 /* Give the header element a background color */
-
+header {
+  background-color: tomato;
+}
 
 /* Center everything in the header and footer */
-
+header, footer {
+  text-align: center;
+}
 
 /* All text to Helvetica */
-
+body {
+  font-family: Helvetica;
+}
 
 /* All links default color is gray*/
-
+a {
+  color: grey;
+}
 
 /* All links on hover color red*/
-
+a:hover {
+  color: red;
+}
 
 /* All Links visted color black*/
-
+a:visited {
+  color: black;
+}
 
 /* Footer disclaimer text to be .5 em*/
-
+#disclaimer {
+  font-size: 0.5em;
+}
 
 /* Remove bullet points from header navigation links */
-
+header nav ul {
+  list-style: none;
+}
 
 /* All Post's Comment Links Italicized, Orange and Remove the Underline */
-
+article [href="#comments"] {
+  font-style: italic;
+  color: orange;
+  text-decoration: none;
+}
 
 /* All Post's Comment Links Show Underline on Hover */
-
+article [href="#comments"]:hover {
+  text-decoration: underline;
+}
 
 /* All Post's Author's Links Bold and Blue, with no Underline */
-
+article h3 a {
+  font-weight: bold;
+  color: blue;
+  text-decoration: none;
+}
 
 /* Article Paragraph Text should have line height of 200% */
-
+article p {
+  line-height: 200%;
+}
 
 /* The First Letter of each Article be 2em */
-
+section.post-content p:first-of-type::first-letter {
+  font-size: 2em;
+}
 
 /* The First Image in every Article should have Rounded Corners*/
-
+section.post-content img:first-of-type {
+  border-radius: 5%;
+}
 
 /* The First Top Cat Section Should have a Golden Background */
-
+#top-cats section:first-of-type {
+  background-color: gold;
+}
 
 /* The 2nd Top Cat Section Should have a Silver/gray Background */
-
+#top-cats section:nth-of-type(2) {
+  background-color: grey;
+}
 
 /* The 3rd Top Section Cat Should have a Bronze/brown Background */
-
+main > section:last-of-type {
+  background-color: brown;
+}
 
 /* Every other Article's Post-Content Background Color to a Light Grey */
-
+article:nth-of-type(odd) .post-content {
+  background-color: lightgrey;
+}
 
 /* All Top Kitten's Profile Photos Rounded */
 
+[alt="profile photo"] {
+  border-radius: 10%;
+}
 
 /*** BONUS ***/
 
 /* Add a cat emoji before a Cat's Name (in the heading content)*/
-
+#top-cats h3:before, main > section:last-of-type h3:before {
+  content: "🐱";
+}
 
 /* Top-most Top Cat has a trophy emoji before name */
+#top-cats section:first-of-type h3:before {
+  content: "🏆🐱";
+}
 
 
 /* Use Google Fonts to change h1 & h2 fonts to Roboto Slab */
+/* latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'), url(https://fonts.gstatic.com/s/robotoslab/v7/BngRUXZYTXPIvIBgJJSb6u92w7CGwR2oefDo.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+h1, h2 {
+  font-family: 'Roboto Slab', serif;
+}
